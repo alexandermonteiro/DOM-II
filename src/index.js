@@ -38,4 +38,20 @@ window.onload = function (evt) {
     const { clientX, clientY } = evt;
     console.log(`mouse is at ${clientX},${clientY}`);
   });
+
+  //   7 - mouseenter
+  //  8 - mouseleave
+
+  const destinations = document.querySelectorAll(".destination");
+  for (let destination of destinations) {
+    destination.addEventListener("mouseenter", (evt) => {
+      console.log(destination);
+      destination.style.fontWeight = "bold";
+    });
+    destination.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        destination.style.fontWeight = "initial";
+      }, 500);
+    });
+  }
 };
